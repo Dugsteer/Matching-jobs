@@ -4,18 +4,140 @@ const loader = document.getElementById("loaderDiv");
 const extra = document.getElementById("info");
 const orange = document.getElementById("orange");
 const blue = window.matchMedia("(max-width: 800px)");
+const nextpic = document.getElementById('nextpic');
+const mainpic = document.getElementById('mainpic');
+const lastpic = document.getElementById('lastpic');
+const thirdpic = document.getElementById('thirdpic');
 
 //Change Intropic
-function returnBalloon(){
-  balloon.classList.remove('fly');
-}
+//switch introduction pic
+function switchpic() {
+  switch (mainpic.innerHTML) {
+    case '<img src="img/mainpic/diver.png" alt="decorative">':
+      mainpic.innerHTML =
+        '<img src="img/mainpic/clown.png" alt="decorative">';
+        mainpic.style.backgroundColor = "red";
+      break;
+    case '<img src="img/mainpic/clown.png" alt="decorative">':
+      mainpic.innerHTML =
+        '<img src="img/mainpic/cowgirl.png" alt="decorative">';
+        mainpic.style.backgroundColor = "green";
+              break;
+    case '<img src="img/mainpic/cowgirl.png" alt="decorative">':
+      mainpic.innerHTML =
+        '<img src="img/mainpic/astronaut.png" alt="decorative">';
+        mainpic.style.backgroundColor = "black";
+      break;
+    case '<img src="img/mainpic/astronaut.png" alt="decorative">':
+      mainpic.innerHTML =
+        '<img src="img/mainpic/wizard.png" alt="decorative">';
+        mainpic.style.backgroundColor = "yellow";
+      break;
+    case '<img src="img/mainpic/wizard.png" alt="decorative">':
+      mainpic.innerHTML =
+        '<img src="img/mainpic/diver.png" alt="decorative">';
+        mainpic.style.backgroundColor = "blue";
+      break;
+    default:
+      mainpic.innerHTML =
+        '<img src="img/mainpic/cowgirl.png" alt="decorative">'
+        mainpic.style.backgroundColor = "yellow";
 
-function liftMe() {
-  balloon.classList.add("fly");
-  setTimeout(returnBalloon, 4000);
-  balloonRise();
-}
+  }
+  switch (nextpic.innerHTML) {
+    case '<img src="img/mainpic/clown.png" alt="decorative">':
+      nextpic.innerHTML =
+        '<img src="img/mainpic/cowgirl.png" alt="decorative">';
+        nextpic.style.backgroundColor = "green";
+      break;
+    case '<img src="img/mainpic/cowgirl.png" alt="decorative">':
+      nextpic.innerHTML =
+        '<img src="img/mainpic/astronaut.png" alt="decorative">';
+        mainpic.style.backgroundColor = "black";
+      break;
+    case '<img src="img/mainpic/astronaut.png" alt="decorative">':
+      nextpic.innerHTML =
+        '<img src="img/mainpic/wizard.png" alt="decorative">';
+        nextpic.style.backgroundColor = "yellow";
+      break;
+    case '<img src="img/mainpic/wizard.png" alt="decorative">':
+      nextpic.innerHTML =
+        '<img src="img/mainpic/diver.png" alt="decorative">';
+        nextpic.style.backgroundColor = "blue";
+      break;
+    default:
+      nextpic.innerHTML =
+        '<img src="img/mainpic/clown.png" alt="decorative">';
+        nextpic.style.backgroundColor = "red";
+  }
+  switch (lastpic.innerHTML) {
+    case '<img src="img/mainpic/astronaut.png" alt="decorative">':
+      lastpic.innerHTML =
+        '<img src="img/mainpic/wizard.png" alt="decorative">';
+        lastpic.style.backgroundColor = "yellow";
+      break;
+    case '<img src="img/mainpic/wizard.png" alt="decorative">':
+      lastpic.innerHTML =
+        '<img src="img/mainpic/diver.png" alt="decorative">';
+        lastpic.style.backgroundColor = "blue";
+      break;
+    case '<img src="img/mainpic/diver.png" alt="decorative">':
+      lastpic.innerHTML =
+        '<img src="img/mainpic/clown.png" alt="decorative">';
+        lastpic.style.backgroundColor = "red";
+      break;
+    case '<img src="img/mainpic/clown.png" alt="decorative">':
+      lastpic.innerHTML =
+        '<img src="img/mainpic/cowgirl.png" alt="decorative">';
+        lastpic.style.backgroundColor = "green";
+      break;
+    default:
+      lastpic.innerHTML =
+        '<img src="img/mainpic/astronaut.png" alt="decorative">';
+        lastpic.style.backgroundColor = "black";
+  }
+  switch (thirdpic.innerHTML) {
+    case '<img src="img/mainpic/cowgirl.png" alt="decorative">':
+      thirdpic.innerHTML =
+        '<img src="img/mainpic/astronaut.png" alt="decorative">';
+        thirdpic.style.backgroundColor = "black";
+      break;
+    case '<img src="img/mainpic/astronaut.png" alt="decorative">':
+      thirdpic.innerHTML =
+        '<img src="img/mainpic/wizard.png" alt="decorative">';
+        thirdpic.style.backgroundColor = "yellow";
+      break;
+    case '<img src="img/mainpic/wizard.png" alt="decorative">':
+      thirdpic.innerHTML =
+        '<img src="img/mainpic/diver.png" alt="decorative">';
+        thirdpic.style.backgroundColor = "blue";
+      break;
+    case '<img src="img/mainpic/diver.png" alt="decorative">':
+      thirdpic.innerHTML =
+        '<img src="img/mainpic/clown.png" alt="decorative">';
+        thirdpic.style.backgroundColor = "red";
+      break;
+    case '<img src="img/mainpic/clown.png" alt="decorative">':
+      thirdpic.innerHTML =
+        '<img src="img/mainpic/cowgirl.png" alt="decorative">';
+        thirdpic.style.backgroundColor = "green";
+      break;
+    default:
+      thirdpic.innerHTML =
+        '<img src="img/mainpic/cowgirl.png" alt="decorative">';
+        thirdpic.style.backgroundColor = "green";
+  }
 
+
+}
+setInterval(switchpic, 600);
+
+//Play applause
+
+function clapping() {
+  const claps = new Audio("sounds/applause.wav");
+  claps.play();
+}
 
 
 //Make sound of balloon
@@ -76,129 +198,129 @@ const sideBar = document.getElementById("sidebar");
 // Each image and word in a set array has the same data-framework number, in order to check for pairs.
 // The data-name is a string, which can be used in the second case as innerHTML.
 const set1 = [
-  { number: "1", name: "airplane" },
+  { number: "1", name: "actor" },
   {
     number: "1",
-    name: "<img src = 'img/airplane.jpg' alt='airplane' class='image'>",
+    name: "<img src = 'img/actor.svg' alt='actor' class='image'>",
   },
-  { number: "2", name: "ambulance" },
+  { number: "2", name: "artist" },
   {
     number: "2",
-    name: "<img src = 'img/ambulance.jpg' alt='ambulance' class='image'>",
+    name: "<img src = 'img/artist.svg' alt='artist' class='image'>",
   },
-  { number: "3", name: "balloon" },
+  { number: "3", name: "astronaut" },
   {
     number: "3",
-    name: "<img src = 'img/balloon.jpg' alt='balloon' class='image'>",
+    name: "<img src = 'img/astronaut.svg' alt='astronaut' class='image'>",
   },
-  { number: "4", name: "bike" },
+  { number: "4", name: "builder" },
   {
     number: "4",
-    name: "<img src = 'img/bike.jpg' alt='bike' class='image'>",
+    name: "<img src = 'img/builder.svg' alt='builder' class='image'>",
   },
-  { number: "5", name: "bus" },
+  { number: "5", name: "chef" },
   {
     number: "5",
-    name: "<img src = 'img/bus.jpg' alt='bus' class='image'>",
+    name: "<img src = 'img/chef.svg' alt='chef' class='image'>",
   },
-  { number: "6", name: "digger" },
+  { number: "6", name: "dancer" },
   {
     number: "6",
-    name: "<img src = 'img/digger.jpg' alt='digger' class='image'>",
+    name: "<img src = 'img/dancer.svg' alt='dancer' class='image'>",
   },
-  { number: "7", name: "e-car" },
+  { number: "7", name: "doctor" },
   {
     number: "7",
-    name: "<img src = 'img/e-car.jpg' alt='e-car' class='image'>",
+    name: "<img src = 'img/doctor.svg' alt='doctor' class='image'>",
   },
-  { number: "8", name: "firetruck" },
+  { number: "8", name: "farmer" },
   {
     number: "8",
-    name: "<img src = 'img/firetruck.jpg' alt='firetruck' class='image'>",
+    name: "<img src = 'img/farmer.svg' alt='farmer' class='image'>",
   },
 ];
 const set2 = [
-  { number: "9", name: "helicopter" },
+  { number: "9", name: "firefighter" },
   {
     number: "9",
-    name: "<img src = 'img/helicopter.jpg' alt='helicopter' class='image'>",
+    name: "<img src = 'img/firefighter.svg' alt='firefighter' class='image'>",
   },
-  { number: "10", name: "limousine" },
+  { number: "10", name: "footballer" },
   {
     number: "10",
-    name: "<img src = 'img/limousine.jpg' alt='limousine' class='image'>",
+    name: "<img src = 'img/footballer.svg' alt='footballer' class='image'>",
   },
-  { number: "11", name: "motorbike" },
+  { number: "11", name: "hairdresser" },
   {
     number: "11",
-    name: "<img src = 'img/motorbike.jpg' alt='motorbike' class='image'>",
+    name: "<img src = 'img/hairdresser.svg' alt='hairdresser' class='image'>",
   },
-  { number: "12", name: "police-car" },
+  { number: "12", name: "mechanic" },
   {
     number: "12",
-    name: "<img src = 'img/police-car.jpg' alt='police-car' class='image'>",
+    name: "<img src = 'img/mechanic.svg' alt='mechanic' class='image'>",
   },
-  { number: "13", name: "sailboat" },
+  { number: "13", name: "musician" },
   {
     number: "13",
-    name: "<img src = 'img/sailboat.jpg' alt='sailboat' class='image'>",
+    name: "<img src = 'img/musician.svg' alt='musician' class='image'>",
   },
-  { number: "14", name: "school-bus" },
+  { number: "14", name: "photographer" },
   {
     number: "14",
-    name: "<img src = 'img/school-bus.jpg' alt='school-bus' class='image'>",
+    name: "<img src = 'img/photographer.svg' alt='photographer' class='image'>",
   },
-  { number: "15", name: "ship" },
+  { number: "15", name: "pilot" },
   {
     number: "15",
-    name: "<img src = 'img/ship.jpg' alt='ship' class='image'>",
+    name: "<img src = 'img/pilot.svg' alt='pilot' class='image'>",
   },
-  { number: "16", name: "speedboat" },
+  { number: "16", name: "police-officer" },
   {
     number: "16",
-    name: "<img src = 'img/speedboat.jpg' alt='speedboat' class='image'>",
+    name: "<img src = 'img/police-officer.svg' alt='police-officer' class='image'>",
   },
 ];
 const set3 = [
-  { number: "17", name: "submarine" },
+  { number: "17", name: "reporter" },
   {
     number: "17",
-    name: "<img src = 'img/submarine.jpg' alt='submarine' class='image'>",
+    name: "<img src = 'img/reporter.svg' alt='reporter' class='image'>",
   },
-  { number: "18", name: "taxi" },
+  { number: "18", name: "singer" },
   {
     number: "18",
-    name: "<img src = 'img/taxi.jpg' alt='taxi' class='image'>",
+    name: "<img src = 'img/singer.svg' alt='singer' class='image'>",
   },
-  { number: "19", name: "train" },
+  { number: "19", name: "soldier" },
   {
     number: "19",
-    name: "<img src = 'img/train.jpg' alt='train' class='image'>",
+    name: "<img src = 'img/soldier.svg' alt='soldier' class='image'>",
   },
-  { number: "20", name: "truck" },
+  { number: "20", name: "taxi-driver" },
   {
     number: "20",
-    name: "<img src = 'img/truck.jpg' alt='truck' class='image'>",
+    name: "<img src = 'img/taxi-driver.svg' alt='taxi-driver' class='image'>",
   },
-  { number: "21", name: "airplane" },
+  { number: "21", name: "teacher" },
   {
     number: "21",
-    name: "<img src = 'img/airplane.jpg' alt='airplane' class='image'>",
+    name: "<img src = 'img/teacher.svg' alt='teacher' class='image'>",
   },
-  { number: "22", name: "bike" },
+  { number: "22", name: "thief" },
   {
     number: "22",
-    name: "<img src = 'img/bike.jpg' alt='bike' class='image'>",
+    name: "<img src = 'img/thief.svg' alt='thief' class='image'>",
   },
-  { number: "23", name: "firetruck" },
+  { number: "23", name: "vet" },
   {
     number: "23",
-    name: "<img src = 'img/firetruck.jpg' alt='firetruck' class='image'>",
+    name: "<img src = 'img/vet.svg' alt='vet' class='image'>",
   },
-  { number: "24", name: "motorbike" },
+  { number: "24", name: "waiter" },
   {
     number: "24",
-    name: "<img src = 'img/motorbike.jpg' alt='motorbike' class='image'>",
+    name: "<img src = 'img/waiter.svg' alt='waiter' class='image'>",
   },
 ];
 
@@ -209,21 +331,21 @@ playGame(set1);
 firstSet.addEventListener("click", () => {
   startLoader();
   gameContainer.innerHTML = "";
-  pageTitle.textContent = "FOOD MATCH: SET 1";
+  pageTitle.textContent = "JOBS MATCH: SET 1";
   playGame(set1);
 });
 
 secondSet.addEventListener("click", () => {
   startLoader();
   gameContainer.innerHTML = "";
-  pageTitle.textContent = "FOOD MATCH: SET 2";
+  pageTitle.textContent = "JOBS MATCH: SET 2";
   playGame(set2);
 });
 
 thirdSet.addEventListener("click", () => {
   startLoader();
   gameContainer.innerHTML = "";
-  pageTitle.textContent = "FOOD MATCH: SET 3";
+  pageTitle.textContent = "JOBS MATCH: SET 3";
 
   playGame(set3);
 });
@@ -249,7 +371,7 @@ function playGame(array) {
     card.classList.add("card");
     //  Include the data-famework (data.number) of the cards so they can be checked plus the necessary HTML.
 
-    card.innerHTML = `<div class="memory-card" tabindex=0 data-framework="${data.number}"><div class="front-face">${data.name}</div><div class="back-face"><img src = "img/car_bg.png" alt="picture of a car" class="imgBg smaller" id="imgBg"></div></div>`;
+    card.innerHTML = `<div class="memory-card" tabindex=0 data-framework="${data.number}"><div class="front-face">${data.name}</div><div class="back-face"><img src = "img/search-job.png" alt="picture of a car" class="imgBg smaller" id="imgBg"></div></div>`;
 
     // Append the card divs to the game container so they appear on the page.
     gameContainer.appendChild(card);

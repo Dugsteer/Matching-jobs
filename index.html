@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content=" A fun, free  online transport card matching game for learning English from Esl-ology.com"
+      content=" A fun, free  online jobs and occupations card matching game for learning English from Esl-ology.com"
     />
     <meta
       name="keywords"
-      content="Vehicles transport matching vocabulary online ESL game"
+      content="Jobs occupations matching vocabulary online ESL game"
     />
-    <title>Transport Matching Game</title>
+    <title>Jobs Matching Game</title>
     <link rel="icon" type="image/png" href="favicon.png" ; />
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="csi.min.js"></script>
@@ -20,7 +20,7 @@
   <body>
     <div class="loader-div" id="loaderDiv" onload="checkForTop();">
       <div class="loader-container">
-        <img class="ghost" src="img/loader/hotair.png" alt="" />
+        <img class="ghost" src="img/loader/search-job.png" alt="" />
         <p class="shadowFrame">
           <svg
             version="1.1"
@@ -57,7 +57,7 @@
       <h3 class="nav-bar__title">Esl-Ology.Com</h3>
       <div class="nav-bar__title-page">
         <span class="nav-bar__title-page-main" id="pageTitle"
-          >TRANSPORT MATCHING FUN</span
+          >JOBS MATCHING FUN</span
         >
       </div>
       <div class="nav-bar__links">
@@ -83,16 +83,21 @@
       </div>
 
       <div class="introduction">
-          <div class="introduction__img" onclick="liftMe();" id="mainpic">
-            <div class="picsdiv">
-              <div id="balloon" class="balloon">
-                <img src="img/loader/hotair.png" />
-              </div>
-              <img class="landscape" src="img/mainpic/lanscape.png" alt="">
+        <div class="picsdiv">
+          <div class="introduction__img" id="mainpic">
+          </div>
+          <div class="introduction__img" id="nextpic">
+            <img src="img/loader/diver.png" alt="decorative" /> 
+          </div>
+          <div class="introduction__img" id="thirdpic">
+            <img src="img/loader/diver.png" alt="decorative" /> 
+          </div>
+          <div class="introduction__img" id="lastpic">
+            <img src="img/loader/diver.png" alt="decorative" /> 
           </div>
         </div>
         <div class="introduction__text">
-          <h1>ON THE ROAD</h1>
+          <h1>WHAT DO YOU DO?</h1>
           <p>
             Match the forms of transport to their names by clicking on the cards
             to turn them over. The team with the most pairs wins! There are
@@ -101,19 +106,17 @@
           <div class="introduction__choices">
             <button class="introduction__set" id="set1">Set 1</button>
             <p class="setlist">
-              airplane, ambulance, balloon, bike, bus, digger, e-car, firetruck
+              actor, artist, astronaut, builder, chef, dancer, doctor, farmer
             </p>
 
             <button class="introduction__set" id="set2">Set 2</button>
             <p class="setlist">
-              firetruck, helicopter, limousine, motorbike, police-car, sailboat,
-              school-bus, ship
+              firefighter, footballer, hairdresser, mechanic, musician, photographer, pilot, police-officer
             </p>
 
             <button class="introduction__set" id="set3">Set 3</button>
             <p class="setlist">
-              speedboat, submarine, taxi, train, truck, airplane, bike,
-              firetruck
+              reporter, singer, soldier, taxi-driver, teacher, thief, vet, waiter
             </p>
           </div>
         </div>
@@ -135,7 +138,7 @@
       </div>
 
       <div class="links">
-        <p class="links__text">Try our other TEFL Transport games.</p>
+        <p class="links__text">Try our other TEFL job games.</p>
         <div class="links__images">
           <div class="links__images-1 figure">
             <a href="flashcard-transport.html">
@@ -183,26 +186,8 @@
           }
         }
         preload(
-          "img/airplane.jpg",
-          "img/firetruck.jpg",
-          "img/school-bus.jpg",
-          "img/ambulance.jpg",
-          "img/helicopter.jpg",
-          "img/ship.jpg",
-          "img/balloon.jpg",
-          "img/limousine.jpg",
-          "img/speedboat.jpg",
-          "img/bike.jpg",
-          "img/submarine.jpg",
-          "img/bus.jpg",
-          "img/taxi.jpg",
-          "img/motorbike.jpg",
-          "img/train.jpg",
-          "img/digger.jpg",
-          "img/police-car.jpg",
-          "img/truck.jpg",
-          "img/e-car.jpg",
-          "img/sailboat.jpg"
+          "img/actor.svg", "img/artist.svg", "img/astronaut.svg", "img/builder.svg", "img/chef.svg", "img/dancer.svg", "img/doctor.svg", "img/farmer.svg", "img/firefighter.svg", "img/footballer.svg", "img/hairdresser.svg", "img/mechanic.svg", "img/musician.svg", "img/photographer.svg", "img/pilot.svg", "img/police-officer.svg", "img/reporter.svg", "img/singer.svg", "img/soldier.svg", "img/taxi-driver.svg", "img/teacher.svg", "img/thief.svg", "img/vet.svg", "img/waiter.svg"
+
         );
         //--><!]]>
       </script>
